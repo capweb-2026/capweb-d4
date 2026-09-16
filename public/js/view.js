@@ -4,7 +4,7 @@ export function renderMessages(messages, container) {
 if (msg.role === 'user') {
   li.textContent = 'Vous : ' + msg.text;
 } else {
-  li.textContent = 'Cap Web : ' + msg.text;
+  li.textContent = 'Mobi : ' + msg.text;
 }
     return li;
   });
