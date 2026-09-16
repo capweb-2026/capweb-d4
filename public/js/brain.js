@@ -18,15 +18,15 @@ return { ok: true, value: texte };
 export function replyTo(message) {
 const texte = message.trim().toLowerCase();
     if (texte === 'salut' || texte === 'bonjour') {
-        return { ok: true, value: 'Bonjour !' };
+        return 'Bonjour !' ;
     }
 
     if (texte === 'aide') {
-        return { ok: true, value: 'Que puis-je faire pour vous ?' };
+        return 'Que puis-je faire pour vous ?' ;
     }
 
     if (texte === 'test') {
-        return { ok: true, value: 'test réussi' };
+        return 'test réussi' ;
     }
-return { ok: false, error: 'Je ne comprends pas votre message.' };
+return 'Je ne comprends pas votre message.' ;
 }

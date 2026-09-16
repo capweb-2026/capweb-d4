@@ -47,8 +47,7 @@ formulaire?.addEventListener('submit', (event) => {
   text: texte
 });
 
-  const resultatReponse = replyTo(texte);
-  const reponse = resultatReponse.ok ? resultatReponse.value : resultatReponse.error;
+  const reponse = replyTo(texte);
   historique.push({
   role: 'assistant',
   text: reponse
