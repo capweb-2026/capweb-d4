@@ -102,3 +102,9 @@ footer {
 #effacer {
   margin-top: 15px;
 }
+
+#suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
