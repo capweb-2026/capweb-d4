@@ -1,12 +1,33 @@
 import { validateMessage, replyTo } from './brain.js';
+import { persona } from './persona.js';
 import { renderMessages } from './view.js';
 const formulaire = document.querySelector('#chat-form');
 const statut = document.querySelector('#status');
 const versionElt = document.querySelector('#version');
+const accueil = document.querySelector('#accueil');
+const suggestions = document.querySelector('#suggestions');
 
 const champ = document.querySelector('#message');
 const liste = document.querySelector('#messages');
 const historique = [];
+if (accueil) {
+  accueil.textContent = persona.accueil;
+}
+
+if (suggestions) {
+  suggestions.replaceChildren();
+  for (const suggestion of persona.suggestions) {
+    const bouton = document.createElement('button');
+    bouton.type = 'button';
+    bouton.textContent = suggestion;
+    bouton.addEventListener('click', () => {
+      champ.value = suggestion;
+      champ.focus();
+    });
+    suggestions.append(bouton);
+  }
+}
+
 const sauvegarde = localStorage.getItem('capweb.historique');
 const boutonEffacer = document.querySelector('#effacer');
 if (sauvegarde) {
