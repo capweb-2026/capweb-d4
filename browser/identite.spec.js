@@ -1,3 +1,4 @@
+/* global localStorage */
 import { test, expect } from '@playwright/test';
 
 const suggestionsAttendues = [
